@@ -59,30 +59,41 @@ public class MyClient {
             System.out.println("message = " + str);
             }
             }
-                for(int j=0;j<=10;j++){
-                    for(int i=0;i<=count;i++){
-                dout.write(("SCHD"+" "+j+" "+type+" "+i+"\n").getBytes());
-               str = (String) din.readLine();
-                System.out.println("message = " + str);
-            }
-                }
 
             
+                int i=0;
+                int j=0;
+            while(true){
+                
+                dout.write(("SCHD "+j+" "+type+" "+i+"\n").getBytes());
+                str = (String) din.readLine();
+                System.out.println("message = " + str);
 
-            dout.write(("LSTQ "+type+"*"+"\n").getBytes());
-            str = (String) din.readLine();
-            System.out.println("message = " + str);
 
-            dout.write(("OK\n").getBytes());
-            str = (String) din.readLine();
-            System.out.println("message = " + str);
+                dout.write(("REDY\n").getBytes());
+                str = (String) din.readLine();
+                System.out.println("message = " + str);
+                i++;
+                j++;
+                if(i==count){
+                    i=0;
+                }
+                if(str.contains("ERR")){
+                    break;
+                }
+            }
+        
+
+
+
+
+            // dout.write(("OK\n").getBytes());
+            // str = (String) din.readLine();
+            // System.out.println("message = " + str);
             // dout.write(("OK\n").getBytes());
             // str = (String) din.readLine();
             // System.out.println("message = " + str);
 
-
-
-            
             dout.write(("QUIT\n").getBytes());
             str = (String) din.readLine();
             System.out.println("message= " + str);
