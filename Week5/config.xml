@@ -1,0 +1,17 @@
+<config randomSeed="1024">
+<servers>
+<server type="micro" limit="2" bootupTime="40" hourlyRate="0.2" cores="2" memory="4000" disk="16000"/>
+<server type="small" limit="2" bootupTime="40" hourlyRate="0.4" cores="4" memory="16000" disk="64000"/>
+<server type="medium" limit="3" bootupTime="60" hourlyRate="0.8" cores="8" memory="32000" disk="128000"/>
+</servers>
+<jobs>
+<job type="short" minRunTime="1" maxRunTime="300" populationRate="60"/>
+<job type="medium" minRunTime="301" maxRunTime="1800" populationRate="30"/>
+<job type="long" minRunTime="1801" maxRunTime="100000" populationRate="10"/>
+</jobs>
+<workload type="moderate" minLoad="30" maxLoad="70"/>
+<termination>
+<condition type="endtime" value="604800"/>
+<condition type="jobcount" value="10"/>
+</termination>
+</config>
