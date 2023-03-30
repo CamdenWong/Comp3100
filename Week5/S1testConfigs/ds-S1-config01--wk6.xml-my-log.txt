@@ -3,8 +3,8 @@
 # Waiting for connection to port 50000 of IP address 127.0.0.1
 RCVD HELO
 SENT OK
-RCVD AUTH Camden
-# Welcome  Camden!
+RCVD AUTH camden
+# Welcome  camden!
 # The system information can be read from 'ds-system.xml'
 SENT OK
 RCVD REDY
@@ -66,8 +66,6 @@ t:        340 job     8 on # 0 of server t2.aws COMPLETED
 SENT JCPL 340 8 t2.aws 0
 RCVD REDY
 SENT JOBN 366 9 49 2 2000 1500
-RCVD REDY
-SENT JOBN 366 9 49 2 2000 1500
 RCVD SCHD 9 t2.aws 0
 t:        366 job     9 (running) on # 0 of server t2.aws (active) SCHEDULED
 t:        366 job     9 on # 0 of server t2.aws RUNNING
@@ -75,8 +73,6 @@ SENT OK
 RCVD REDY
 t:        886 job     9 on # 0 of server t2.aws COMPLETED
 SENT JCPL 886 9 t2.aws 0
-RCVD REDY
-SENT JOBN 919 10 980 2 200 600
 RCVD REDY
 SENT JOBN 919 10 980 2 200 600
 RCVD SCHD 10 t2.aws 0
@@ -88,8 +84,6 @@ t:       1553 job     2 on # 0 of server t2.aws COMPLETED
 SENT JCPL 1553 2 t2.aws 0
 RCVD REDY
 SENT JOBN 1631 11 453 2 1000 1300
-RCVD REDY
-SENT JOBN 1631 11 453 2 1000 1300
 RCVD SCHD 11 t2.aws 0
 t:       1631 job    11 (running) on # 0 of server t2.aws (active) SCHEDULED
 t:       1631 job    11 on # 0 of server t2.aws RUNNING
@@ -97,8 +91,6 @@ SENT OK
 RCVD REDY
 t:       1756 job     3 on # 0 of server t2.aws COMPLETED
 SENT JCPL 1756 3 t2.aws 0
-RCVD REDY
-SENT JOBN 1784 12 1615 1 500 1700
 RCVD REDY
 SENT JOBN 1784 12 1615 1 500 1700
 RCVD SCHD 12 t2.aws 0
@@ -110,8 +102,6 @@ t:       1997 job    11 on # 0 of server t2.aws COMPLETED
 SENT JCPL 1997 11 t2.aws 0
 RCVD REDY
 SENT JOBN 2073 13 20 3 2300 1800
-RCVD REDY
-SENT JOBN 2073 13 20 3 2300 1800
 RCVD SCHD 13 t2.aws 0
 t:       2073 job    13 (running) on # 0 of server t2.aws (active) SCHEDULED
 t:       2073 job    13 on # 0 of server t2.aws RUNNING
@@ -119,8 +109,6 @@ SENT OK
 RCVD REDY
 t:       2278 job    13 on # 0 of server t2.aws COMPLETED
 SENT JCPL 2278 13 t2.aws 0
-RCVD REDY
-SENT JOBN 2396 14 1567 9 5600 17600
 RCVD REDY
 SENT JOBN 2396 14 1567 9 5600 17600
 RCVD SCHD 14 t2.aws 0

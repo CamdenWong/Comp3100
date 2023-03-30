@@ -130,7 +130,7 @@ public class MyClient {
         
                 i++;
                 
-                if(i>=count){
+                if(i>count){
                     i=0;
                 }
                 if(str.equals("NONE")){
