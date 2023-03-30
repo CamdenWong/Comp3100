@@ -12,12 +12,14 @@ public class MyClient {
             dout.write(("HELO\n").getBytes());
             String str = (String) din.readLine();
             System.out.println("message = " + str);
-            dout.write(("AUTH Camden\n").getBytes());
+            dout.write(("AUTH camden\n").getBytes());
             str = (String) din.readLine();
             System.out.println("message = " + str);
 
             dout.write(("REDY\n").getBytes());
             str = (String) din.readLine();
+
+            String temp=str;
             System.out.println("message = " + str);
 
 
@@ -25,24 +27,24 @@ public class MyClient {
             str = (String) din.readLine();
             System.out.println("message = " + str);
 
+            String[]task=str.split(" ");
+            int num=Integer.parseInt(task[1]);
+
             dout.write(("OK\n").getBytes());
-            str = (String) din.readLine();
+            // str = (String) din.readLine();
+            // System.out.println("message = " + str);
+
+            
 
 
             int largestCore= 0;
             int count=0;
             String type="";
 
-            while(true){
-                if(str.equals(".")){
-                break;
-            }
-            dout.write(("OK\n").getBytes());
+            for(int i=0;i<num;i++){
             str = (String) din.readLine();
+           
             String[] arr = str.split(" ");
-
-            
-            if(arr.length>1){
             int id=Integer.parseInt(arr[1]);
             int core=Integer.parseInt(arr[4]);
             
@@ -56,29 +58,82 @@ public class MyClient {
                     type =arr[0];
                 }
             }
+             System.out.println("message = " + str);
+
+            }
+
+            dout.write(("OK\n").getBytes());
+            str = (String) din.readLine();
             System.out.println("message = " + str);
-            }
-            }
+
+            // dout.write(("OK\n").getBytes());
+            // str = (String) din.readLine();
+            // System.out.println("message = " + str);
+
+
+
+
+
+            
+
+            // while(true){
+            //     if(str.equals(".")){
+            //     break;
+            // }
+            // dout.write(("OK\n").getBytes());
+            // str = (String) din.readLine();
+            // String[] arr = str.split(" ");
+
+            
+            // if(arr.length>1){
+            // int id=Integer.parseInt(arr[1]);
+            // int core=Integer.parseInt(arr[4]);
+            
+            
+            // if(largestCore==0){
+            //     largestCore=core;
+            // }else{
+            //     if (core>=largestCore){
+            //         largestCore=core;
+            //         count=id;
+            //         type =arr[0];
+            //     }
+            // }
+            // System.out.println("message = " + str);
+            // }
+            // }
+
 
             
                 int i=0;
                 int j=0;
-            while(true){
-                
+            while(!temp.equals("JCPL")){
+
+                if(!str.contains("JCPL")&&(!str.contains("ERR"))){
                 dout.write(("SCHD "+j+" "+type+" "+i+"\n").getBytes());
                 str = (String) din.readLine();
                 System.out.println("message = " + str);
+                j++;
+                }
 
+                if(str.contains("JCPL")){
+                    dout.write(("REDY\n").getBytes());
+                    str = (String) din.readLine();;
+                    System.out.println("message = " + str);
+                }
 
                 dout.write(("REDY\n").getBytes());
                 str = (String) din.readLine();
                 System.out.println("message = " + str);
+
+                 
+        
                 i++;
-                j++;
-                if(i==count){
+                
+                if(i>=count){
                     i=0;
                 }
-                if(str.contains("ERR")){
+                if(str.equals("NONE")){
                     break;
                 }
             }

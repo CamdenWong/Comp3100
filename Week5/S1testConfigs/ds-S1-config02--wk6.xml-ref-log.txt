@@ -1,0 +1,337 @@
+# ds-sim server 28-Feb, 2023 @ MQ - client-server
+# Server-side simulator started with './ds-server -c ./S1testConfigs/ds-S1-config02--wk6.xml -v brief -n'
+# Waiting for connection to port 50000 of IP address 127.0.0.1
+RCVD HELO
+SENT OK
+RCVD AUTH camden
+# Welcome  camden!
+# The system information can be read from 'ds-system.xml'
+SENT OK
+RCVD REDY
+SENT JOBN 37 0 1135 3 700 3800
+RCVD SCHD 0 xlarge 0
+t:         37 job     0 (waiting) on # 0 of server xlarge (booting) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 60 1 597 2 1500 2900
+RCVD SCHD 1 xlarge 1
+t:         60 job     1 (waiting) on # 1 of server xlarge (booting) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 96 2 1441 2 1500 2100
+RCVD SCHD 2 xlarge 0
+t:         96 job     2 (waiting) on # 0 of server xlarge (booting) SCHEDULED
+SENT OK
+RCVD REDY
+t:         97 job     0 on # 0 of server xlarge RUNNING
+t:         97 job     2 on # 0 of server xlarge RUNNING
+SENT JOBN 101 3 954 2 900 2500
+RCVD SCHD 3 xlarge 1
+t:        101 job     3 (waiting) on # 1 of server xlarge (booting) SCHEDULED
+SENT OK
+RCVD REDY
+t:        120 job     1 on # 1 of server xlarge RUNNING
+t:        120 job     3 on # 1 of server xlarge RUNNING
+SENT JOBN 137 4 5 1 100 2000
+RCVD SCHD 4 xlarge 0
+t:        137 job     4 (running) on # 0 of server xlarge (active) SCHEDULED
+t:        137 job     4 on # 0 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 141 5 131 3 2700 2600
+RCVD SCHD 5 xlarge 1
+t:        141 job     5 (running) on # 1 of server xlarge (active) SCHEDULED
+t:        141 job     5 on # 1 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 153 6 836 4 4000 7600
+RCVD SCHD 6 xlarge 0
+t:        153 job     6 (running) on # 0 of server xlarge (active) SCHEDULED
+t:        153 job     6 on # 0 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 165 7 344 2 500 2100
+RCVD SCHD 7 xlarge 1
+t:        165 job     7 (running) on # 1 of server xlarge (active) SCHEDULED
+t:        165 job     7 on # 1 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 169 8 235 1 100 800
+RCVD SCHD 8 xlarge 0
+t:        169 job     8 (running) on # 0 of server xlarge (active) SCHEDULED
+t:        169 job     8 on # 0 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 169 9 591 2 600 1500
+RCVD SCHD 9 xlarge 1
+t:        169 job     9 (running) on # 1 of server xlarge (active) SCHEDULED
+t:        169 job     9 on # 1 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 171 10 315 1 100 1600
+RCVD SCHD 10 xlarge 0
+t:        171 job    10 (running) on # 0 of server xlarge (active) SCHEDULED
+t:        171 job    10 on # 0 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 173 11 26 1 500 600
+RCVD SCHD 11 xlarge 1
+t:        173 job    11 (running) on # 1 of server xlarge (active) SCHEDULED
+t:        173 job    11 on # 1 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 175 12 5 1 700 400
+RCVD SCHD 12 xlarge 0
+t:        175 job    12 (running) on # 0 of server xlarge (active) SCHEDULED
+t:        175 job    12 on # 0 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 177 13 149 3 1900 500
+RCVD SCHD 13 xlarge 1
+t:        177 job    13 (running) on # 1 of server xlarge (active) SCHEDULED
+t:        177 job    13 on # 1 of server xlarge RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 177 14 220 4 3500 3900
+RCVD SCHD 14 xlarge 0
+t:        177 job    14 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 180 15 467 2 2000 3500
+RCVD SCHD 15 xlarge 1
+t:        180 job    15 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        181 job    12 on # 0 of server xlarge COMPLETED
+t:        181 job    14 on # 0 of server xlarge RUNNING
+SENT JCPL 181 12 xlarge 0
+RCVD REDY
+SENT JOBN 181 16 2648 2 1300 1200
+RCVD SCHD 16 xlarge 0
+t:        181 job    16 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 185 17 1440 6 5700 10900
+RCVD SCHD 17 xlarge 1
+t:        185 job    17 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 187 18 5 4 3200 6400
+RCVD SCHD 18 xlarge 0
+t:        187 job    18 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 190 19 292 4 3000 2200
+RCVD SCHD 19 xlarge 1
+t:        190 job    19 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 199 20 88 3 3000 5100
+RCVD SCHD 20 xlarge 0
+t:        199 job    20 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 202 21 253 3 500 2800
+RCVD SCHD 21 xlarge 1
+t:        202 job    21 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 206 22 2555 4 1100 900
+RCVD SCHD 22 xlarge 0
+t:        206 job    22 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 211 23 93447 2 500 1900
+RCVD SCHD 23 xlarge 1
+t:        211 job    23 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 215 24 1005 15 13900 21200
+RCVD SCHD 24 xlarge 0
+t:        215 job    24 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        245 job     4 on # 0 of server xlarge COMPLETED
+SENT JCPL 245 4 xlarge 0
+RCVD REDY
+t:        300 job     5 on # 1 of server xlarge COMPLETED
+t:        300 job    15 on # 1 of server xlarge RUNNING
+SENT JCPL 300 5 xlarge 1
+RCVD REDY
+SENT JOBN 300 25 1150 2 1500 3700
+RCVD SCHD 25 xlarge 1
+t:        300 job    25 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        327 job    11 on # 1 of server xlarge COMPLETED
+SENT JCPL 327 11 xlarge 1
+RCVD REDY
+t:        331 job    10 on # 0 of server xlarge COMPLETED
+t:        331 job    16 on # 0 of server xlarge RUNNING
+SENT JCPL 331 10 xlarge 0
+RCVD REDY
+SENT JOBN 350 26 18231 5 3200 6600
+RCVD SCHD 26 xlarge 0
+t:        350 job    26 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        388 job     8 on # 0 of server xlarge COMPLETED
+SENT JCPL 388 8 xlarge 0
+RCVD REDY
+SENT JOBN 417 27 151 8 8400 16200
+RCVD SCHD 27 xlarge 1
+t:        417 job    27 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        421 job    14 on # 0 of server xlarge COMPLETED
+t:        421 job    18 on # 0 of server xlarge RUNNING
+SENT JCPL 421 14 xlarge 0
+RCVD REDY
+t:        454 job     7 on # 1 of server xlarge COMPLETED
+SENT JCPL 454 7 xlarge 1
+RCVD REDY
+t:        466 job     9 on # 1 of server xlarge COMPLETED
+t:        466 job    17 on # 1 of server xlarge RUNNING
+SENT JCPL 466 9 xlarge 1
+RCVD REDY
+t:        468 job    18 on # 0 of server xlarge COMPLETED
+t:        468 job    20 on # 0 of server xlarge RUNNING
+SENT JCPL 468 18 xlarge 0
+RCVD REDY
+SENT JOBN 477 28 9 1 300 900
+RCVD SCHD 28 xlarge 0
+t:        477 job    28 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 501 29 137 1 300 100
+RCVD SCHD 29 xlarge 1
+t:        501 job    29 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 544 30 1 3 3000 1300
+RCVD SCHD 30 xlarge 0
+t:        544 job    30 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 578 31 49 1 200 1200
+RCVD SCHD 31 xlarge 1
+t:        578 job    31 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        581 job    13 on # 1 of server xlarge COMPLETED
+t:        581 job    19 on # 1 of server xlarge RUNNING
+SENT JCPL 581 13 xlarge 1
+RCVD REDY
+SENT JOBN 596 32 622 2 900 2800
+RCVD SCHD 32 xlarge 0
+t:        596 job    32 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 645 33 15 1 400 800
+RCVD SCHD 33 xlarge 1
+t:        645 job    33 (waiting) on # 1 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        674 job     1 on # 1 of server xlarge COMPLETED
+SENT JCPL 674 1 xlarge 1
+RCVD REDY
+SENT JOBN 689 34 519 4 1900 6000
+RCVD SCHD 34 xlarge 0
+t:        689 job    34 (waiting) on # 0 of server xlarge (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        793 job    15 on # 1 of server xlarge COMPLETED
+t:        793 job    21 on # 1 of server xlarge RUNNING
+SENT JCPL 793 15 xlarge 1
+RCVD REDY
+t:        876 job    19 on # 1 of server xlarge COMPLETED
+t:        876 job    23 on # 1 of server xlarge RUNNING
+t:        876 job    25 on # 1 of server xlarge RUNNING
+SENT JCPL 876 19 xlarge 1
+RCVD REDY
+t:        916 job     6 on # 0 of server xlarge COMPLETED
+t:        916 job    22 on # 0 of server xlarge RUNNING
+SENT JCPL 916 6 xlarge 0
+RCVD REDY
+t:        936 job    20 on # 0 of server xlarge COMPLETED
+SENT JCPL 936 20 xlarge 0
+RCVD REDY
+t:        959 job    21 on # 1 of server xlarge COMPLETED
+SENT JCPL 959 21 xlarge 1
+RCVD REDY
+t:       1315 job     0 on # 0 of server xlarge COMPLETED
+SENT JCPL 1315 0 xlarge 0
+RCVD REDY
+t:       1645 job    17 on # 1 of server xlarge COMPLETED
+t:       1645 job    27 on # 1 of server xlarge RUNNING
+t:       1645 job    29 on # 1 of server xlarge RUNNING
+t:       1645 job    31 on # 1 of server xlarge RUNNING
+SENT JCPL 1645 17 xlarge 1
+RCVD REDY
+t:       1652 job    25 on # 1 of server xlarge COMPLETED
+t:       1652 job    33 on # 1 of server xlarge RUNNING
+SENT JCPL 1652 25 xlarge 1
+RCVD REDY
+t:       1668 job    33 on # 1 of server xlarge COMPLETED
+SENT JCPL 1668 33 xlarge 1
+RCVD REDY
+t:       1685 job     3 on # 1 of server xlarge COMPLETED
+SENT JCPL 1685 3 xlarge 1
+RCVD REDY
+t:       1718 job    31 on # 1 of server xlarge COMPLETED
+SENT JCPL 1718 31 xlarge 1
+RCVD REDY
+t:       1756 job    27 on # 1 of server xlarge COMPLETED
+SENT JCPL 1756 27 xlarge 1
+RCVD REDY
+t:       1775 job    29 on # 1 of server xlarge COMPLETED
+SENT JCPL 1775 29 xlarge 1
+RCVD REDY
+t:       1791 job    16 on # 0 of server xlarge COMPLETED
+SENT JCPL 1791 16 xlarge 0
+RCVD REDY
+t:       1885 job     2 on # 0 of server xlarge COMPLETED
+SENT JCPL 1885 2 xlarge 0
+RCVD REDY
+t:       2400 job    22 on # 0 of server xlarge COMPLETED
+t:       2400 job    24 on # 0 of server xlarge RUNNING
+SENT JCPL 2400 22 xlarge 0
+RCVD REDY
+t:       2983 job    24 on # 0 of server xlarge COMPLETED
+t:       2983 job    26 on # 0 of server xlarge RUNNING
+t:       2983 job    28 on # 0 of server xlarge RUNNING
+t:       2983 job    30 on # 0 of server xlarge RUNNING
+t:       2983 job    32 on # 0 of server xlarge RUNNING
+t:       2983 job    34 on # 0 of server xlarge RUNNING
+SENT JCPL 2983 24 xlarge 0
+RCVD REDY
+t:       2987 job    30 on # 0 of server xlarge COMPLETED
+SENT JCPL 2987 30 xlarge 0
+RCVD REDY
+t:       2992 job    28 on # 0 of server xlarge COMPLETED
+SENT JCPL 2992 28 xlarge 0
+RCVD REDY
+t:       3570 job    32 on # 0 of server xlarge COMPLETED
+SENT JCPL 3570 32 xlarge 0
+RCVD REDY
+t:       4012 job    34 on # 0 of server xlarge COMPLETED
+SENT JCPL 4012 34 xlarge 0
+RCVD REDY
+t:      42734 job    26 on # 0 of server xlarge COMPLETED
+SENT JCPL 42734 26 xlarge 0
+RCVD REDY
+t:      84654 job    23 on # 1 of server xlarge COMPLETED
+SENT JCPL 84654 23 xlarge 1
+RCVD REDY
+SENT NONE
+RCVD QUIT
+SENT QUIT
+# -------------------------------------------------------------------------------------
+# 0 small servers used with a utilisation of 0.00 at the cost of $0.00
+# 0 medium servers used with a utilisation of 0.00 at the cost of $0.00
+# 0 large servers used with a utilisation of 0.00 at the cost of $0.00
+# 2 xlarge servers used with a utilisation of 100.00 at the cost of $56.52
+# ==================================== [ Summary ] ====================================
+# actual simulation end time: 84654, #jobs: 35 (failed 0 times)
+# total #servers used: 2, avg util: 100.00% (ef. usage: 100.00%), total cost: $56.52
+# avg waiting time: 657, avg exec time: 4010, avg turnaround time: 4667

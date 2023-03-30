@@ -1,0 +1,481 @@
+# ds-sim server 28-Feb, 2023 @ MQ - client-server
+# Server-side simulator started with './ds-server -c ./S1testConfigs/ds-S1-config03--wk6.xml -v brief -n'
+# Waiting for connection to port 50000 of IP address 127.0.0.1
+RCVD HELO
+SENT OK
+RCVD AUTH Camden
+# Welcome  Camden!
+# The system information can be read from 'ds-system.xml'
+SENT OK
+RCVD REDY
+SENT JOBN 37 0 1621 3 700 3800
+RCVD SCHD 0 ultrasuper 0
+t:         37 job     0 (waiting) on # 0 of server ultrasuper (booting) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 60 1 521 2 1500 2900
+RCVD SCHD 1 ultrasuper 0
+t:         60 job     1 (waiting) on # 0 of server ultrasuper (booting) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 76 2 877 2 1500 2100
+RCVD SCHD 2 ultrasuper 0
+t:         76 job     2 (waiting) on # 0 of server ultrasuper (booting) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 111 3 53 4 1800 5100
+RCVD SCHD 3 ultrasuper 0
+t:        111 job     3 (waiting) on # 0 of server ultrasuper (booting) SCHEDULED
+SENT OK
+RCVD REDY
+t:        127 job     0 on # 0 of server ultrasuper RUNNING
+t:        127 job     1 on # 0 of server ultrasuper RUNNING
+t:        127 job     2 on # 0 of server ultrasuper RUNNING
+t:        127 job     3 on # 0 of server ultrasuper RUNNING
+SENT JOBN 147 4 95 1 100 2000
+RCVD SCHD 4 ultrasuper 0
+t:        147 job     4 (running) on # 0 of server ultrasuper (active) SCHEDULED
+t:        147 job     4 on # 0 of server ultrasuper RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 186 5 260 3 2700 2600
+RCVD SCHD 5 ultrasuper 0
+t:        186 job     5 (running) on # 0 of server ultrasuper (active) SCHEDULED
+t:        186 job     5 on # 0 of server ultrasuper RUNNING
+SENT OK
+RCVD REDY
+SENT JOBN 228 6 5774 4 4000 7600
+RCVD SCHD 6 ultrasuper 0
+t:        228 job     6 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 255 7 911 2 500 2100
+RCVD SCHD 7 ultrasuper 0
+t:        255 job     7 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 279 8 1006 1 100 800
+RCVD SCHD 8 ultrasuper 0
+t:        279 job     8 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 284 9 362 2 600 1500
+RCVD SCHD 9 ultrasuper 0
+t:        284 job     9 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 286 10 231 1 100 1600
+RCVD SCHD 10 ultrasuper 0
+t:        286 job    10 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 298 11 29 1 500 600
+RCVD SCHD 11 ultrasuper 0
+t:        298 job    11 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 300 12 51 1 700 400
+RCVD SCHD 12 ultrasuper 0
+t:        300 job    12 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 302 13 9 3 1900 500
+RCVD SCHD 13 ultrasuper 0
+t:        302 job    13 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 307 14 10 4 3500 3900
+RCVD SCHD 14 ultrasuper 0
+t:        307 job    14 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        310 job     4 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 310 4 ultrasuper 0
+RCVD REDY
+SENT JOBN 310 15 207 2 2000 3500
+RCVD REDY
+SENT JOBN 310 15 207 2 2000 3500
+RCVD SCHD 15 ultrasuper 0
+t:        310 job    15 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 316 16 5237 2 1300 1200
+RCVD SCHD 16 ultrasuper 0
+t:        316 job    16 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 320 17 1382 6 5700 10900
+RCVD SCHD 17 ultrasuper 0
+t:        320 job    17 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 322 18 9 4 3200 6400
+RCVD SCHD 18 ultrasuper 0
+t:        322 job    18 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 325 19 16 8 6000 4500
+RCVD SCHD 19 ultrasuper 0
+t:        325 job    19 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 329 20 104 7 7200 12000
+RCVD SCHD 20 ultrasuper 0
+t:        329 job    20 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 332 21 95 3 500 2800
+RCVD SCHD 21 ultrasuper 0
+t:        332 job    21 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 336 22 681 4 1100 900
+RCVD SCHD 22 ultrasuper 0
+t:        336 job    22 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 336 23 2330 2 500 1900
+RCVD SCHD 23 ultrasuper 0
+t:        336 job    23 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 340 24 587 15 13900 21200
+RCVD SCHD 24 ultrasuper 0
+t:        340 job    24 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 342 25 758 2 1500 3700
+RCVD SCHD 25 ultrasuper 0
+t:        342 job    25 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 346 26 6 12 23800 44300
+RCVD SCHD 26 ultrasuper 0
+t:        346 job    26 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 347 27 667 4 3300 2900
+RCVD SCHD 27 ultrasuper 0
+t:        347 job    27 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 351 28 674 4 1300 2800
+RCVD SCHD 28 ultrasuper 0
+t:        351 job    28 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 360 29 3 13 11900 50100
+RCVD SCHD 29 ultrasuper 0
+t:        360 job    29 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 362 30 798 12 1900 13400
+RCVD SCHD 30 ultrasuper 0
+t:        362 job    30 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 362 31 3294 7 3200 11600
+RCVD SCHD 31 ultrasuper 0
+t:        362 job    31 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 393 32 1167 2 1000 3000
+RCVD SCHD 32 ultrasuper 0
+t:        393 job    32 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 394 33 431 1 1000 1600
+RCVD SCHD 33 ultrasuper 0
+t:        394 job    33 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 427 34 1944 1 700 100
+RCVD SCHD 34 ultrasuper 0
+t:        427 job    34 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 434 35 217 1 700 900
+RCVD SCHD 35 ultrasuper 0
+t:        434 job    35 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        459 job     5 on # 0 of server ultrasuper COMPLETED
+t:        459 job     6 on # 0 of server ultrasuper RUNNING
+SENT JCPL 459 5 ultrasuper 0
+RCVD REDY
+SENT JOBN 464 36 515 2 1600 3200
+RCVD REDY
+SENT JOBN 464 36 515 2 1600 3200
+RCVD SCHD 36 ultrasuper 0
+t:        464 job    36 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        465 job     1 on # 0 of server ultrasuper COMPLETED
+t:        465 job     7 on # 0 of server ultrasuper RUNNING
+t:        465 job     8 on # 0 of server ultrasuper RUNNING
+SENT JCPL 465 1 ultrasuper 0
+RCVD REDY
+SENT JOBN 475 37 324 7 5600 3900
+RCVD REDY
+SENT JOBN 475 37 324 7 5600 3900
+RCVD SCHD 37 ultrasuper 0
+t:        475 job    37 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 477 38 821 1 1000 200
+RCVD SCHD 38 ultrasuper 0
+t:        477 job    38 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 491 39 364 1 1000 1000
+RCVD SCHD 39 ultrasuper 0
+t:        491 job    39 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 501 40 48 4 4200 5900
+RCVD SCHD 40 ultrasuper 0
+t:        501 job    40 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 502 41 212 4 1500 700
+RCVD SCHD 41 ultrasuper 0
+t:        502 job    41 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 502 42 111 1 300 1400
+RCVD SCHD 42 ultrasuper 0
+t:        502 job    42 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 505 43 232 12 15900 16000
+RCVD SCHD 43 ultrasuper 0
+t:        505 job    43 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 514 44 182 10 6000 36100
+RCVD SCHD 44 ultrasuper 0
+t:        514 job    44 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 628 45 134 1 6000 6000
+RCVD SCHD 45 ultrasuper 0
+t:        628 job    45 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 660 46 178 1 400 1000
+RCVD SCHD 46 ultrasuper 0
+t:        660 job    46 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 677 47 485 1 800 1700
+RCVD SCHD 47 ultrasuper 0
+t:        677 job    47 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 687 48 2276 3 3000 2500
+RCVD SCHD 48 ultrasuper 0
+t:        687 job    48 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+SENT JOBN 714 49 107 4 3300 7900
+RCVD SCHD 49 ultrasuper 0
+t:        714 job    49 (waiting) on # 0 of server ultrasuper (active) SCHEDULED
+SENT OK
+RCVD REDY
+t:        968 job     7 on # 0 of server ultrasuper COMPLETED
+t:        968 job     9 on # 0 of server ultrasuper RUNNING
+SENT JCPL 968 7 ultrasuper 0
+RCVD REDY
+t:        985 job     8 on # 0 of server ultrasuper COMPLETED
+t:        985 job    10 on # 0 of server ultrasuper RUNNING
+SENT JCPL 985 8 ultrasuper 0
+RCVD REDY
+t:       1151 job    10 on # 0 of server ultrasuper COMPLETED
+t:       1151 job    11 on # 0 of server ultrasuper RUNNING
+SENT JCPL 1151 10 ultrasuper 0
+RCVD REDY
+t:       1182 job    11 on # 0 of server ultrasuper COMPLETED
+t:       1182 job    12 on # 0 of server ultrasuper RUNNING
+SENT JCPL 1182 11 ultrasuper 0
+RCVD REDY
+t:       1280 job    12 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 1280 12 ultrasuper 0
+RCVD REDY
+t:       1312 job     9 on # 0 of server ultrasuper COMPLETED
+t:       1312 job    13 on # 0 of server ultrasuper RUNNING
+SENT JCPL 1312 9 ultrasuper 0
+RCVD REDY
+t:       1632 job    13 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 1632 13 ultrasuper 0
+RCVD REDY
+t:       1759 job     0 on # 0 of server ultrasuper COMPLETED
+t:       1759 job    14 on # 0 of server ultrasuper RUNNING
+t:       1759 job    15 on # 0 of server ultrasuper RUNNING
+SENT JCPL 1759 0 ultrasuper 0
+RCVD REDY
+t:       1861 job     2 on # 0 of server ultrasuper COMPLETED
+t:       1861 job    16 on # 0 of server ultrasuper RUNNING
+SENT JCPL 1861 2 ultrasuper 0
+RCVD REDY
+t:       1969 job    14 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 1969 14 ultrasuper 0
+RCVD REDY
+t:       2129 job    15 on # 0 of server ultrasuper COMPLETED
+t:       2129 job    17 on # 0 of server ultrasuper RUNNING
+SENT JCPL 2129 15 ultrasuper 0
+RCVD REDY
+t:       2937 job    17 on # 0 of server ultrasuper COMPLETED
+t:       2937 job    18 on # 0 of server ultrasuper RUNNING
+SENT JCPL 2937 17 ultrasuper 0
+RCVD REDY
+t:       3006 job     3 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 3006 3 ultrasuper 0
+RCVD REDY
+t:       3128 job    18 on # 0 of server ultrasuper COMPLETED
+t:       3128 job    19 on # 0 of server ultrasuper RUNNING
+SENT JCPL 3128 18 ultrasuper 0
+RCVD REDY
+t:       3487 job     6 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 3487 6 ultrasuper 0
+RCVD REDY
+t:       3525 job    19 on # 0 of server ultrasuper COMPLETED
+t:       3525 job    20 on # 0 of server ultrasuper RUNNING
+t:       3525 job    21 on # 0 of server ultrasuper RUNNING
+t:       3525 job    22 on # 0 of server ultrasuper RUNNING
+SENT JCPL 3525 19 ultrasuper 0
+RCVD REDY
+t:       3576 job    21 on # 0 of server ultrasuper COMPLETED
+t:       3576 job    23 on # 0 of server ultrasuper RUNNING
+SENT JCPL 3576 21 ultrasuper 0
+RCVD REDY
+t:       3706 job    20 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 3706 20 ultrasuper 0
+RCVD REDY
+t:       4067 job    22 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 4067 22 ultrasuper 0
+RCVD REDY
+t:       4544 job    16 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 4544 16 ultrasuper 0
+RCVD REDY
+t:       4795 job    23 on # 0 of server ultrasuper COMPLETED
+t:       4795 job    24 on # 0 of server ultrasuper RUNNING
+SENT JCPL 4795 23 ultrasuper 0
+RCVD REDY
+t:       5103 job    24 on # 0 of server ultrasuper COMPLETED
+t:       5103 job    25 on # 0 of server ultrasuper RUNNING
+t:       5103 job    26 on # 0 of server ultrasuper RUNNING
+SENT JCPL 5103 24 ultrasuper 0
+RCVD REDY
+t:       5176 job    26 on # 0 of server ultrasuper COMPLETED
+t:       5176 job    27 on # 0 of server ultrasuper RUNNING
+t:       5176 job    28 on # 0 of server ultrasuper RUNNING
+SENT JCPL 5176 26 ultrasuper 0
+RCVD REDY
+t:       5516 job    28 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 5516 28 ultrasuper 0
+RCVD REDY
+t:       5558 job    25 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 5558 25 ultrasuper 0
+RCVD REDY
+t:       5952 job    27 on # 0 of server ultrasuper COMPLETED
+t:       5952 job    29 on # 0 of server ultrasuper RUNNING
+SENT JCPL 5952 27 ultrasuper 0
+RCVD REDY
+t:       5986 job    29 on # 0 of server ultrasuper COMPLETED
+t:       5986 job    30 on # 0 of server ultrasuper RUNNING
+SENT JCPL 5986 29 ultrasuper 0
+RCVD REDY
+t:       6489 job    30 on # 0 of server ultrasuper COMPLETED
+t:       6489 job    31 on # 0 of server ultrasuper RUNNING
+t:       6489 job    32 on # 0 of server ultrasuper RUNNING
+t:       6489 job    33 on # 0 of server ultrasuper RUNNING
+t:       6489 job    34 on # 0 of server ultrasuper RUNNING
+t:       6489 job    35 on # 0 of server ultrasuper RUNNING
+t:       6489 job    36 on # 0 of server ultrasuper RUNNING
+SENT JCPL 6489 30 ultrasuper 0
+RCVD REDY
+t:       6735 job    35 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 6735 35 ultrasuper 0
+RCVD REDY
+t:       7041 job    36 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 7041 36 ultrasuper 0
+RCVD REDY
+t:       7049 job    33 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 7049 33 ultrasuper 0
+RCVD REDY
+t:       7346 job    32 on # 0 of server ultrasuper COMPLETED
+t:       7346 job    37 on # 0 of server ultrasuper RUNNING
+t:       7346 job    38 on # 0 of server ultrasuper RUNNING
+SENT JCPL 7346 32 ultrasuper 0
+RCVD REDY
+t:       7522 job    37 on # 0 of server ultrasuper COMPLETED
+t:       7522 job    39 on # 0 of server ultrasuper RUNNING
+t:       7522 job    40 on # 0 of server ultrasuper RUNNING
+SENT JCPL 7522 37 ultrasuper 0
+RCVD REDY
+t:       7621 job    40 on # 0 of server ultrasuper COMPLETED
+t:       7621 job    41 on # 0 of server ultrasuper RUNNING
+t:       7621 job    42 on # 0 of server ultrasuper RUNNING
+SENT JCPL 7621 40 ultrasuper 0
+RCVD REDY
+t:       7773 job    38 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 7773 38 ultrasuper 0
+RCVD REDY
+t:       7888 job    42 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 7888 42 ultrasuper 0
+RCVD REDY
+t:       7959 job    34 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 7959 34 ultrasuper 0
+RCVD REDY
+t:       7978 job    39 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 7978 39 ultrasuper 0
+RCVD REDY
+t:       8148 job    41 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 8148 41 ultrasuper 0
+RCVD REDY
+t:       8503 job    31 on # 0 of server ultrasuper COMPLETED
+t:       8503 job    43 on # 0 of server ultrasuper RUNNING
+SENT JCPL 8503 31 ultrasuper 0
+RCVD REDY
+t:       8641 job    43 on # 0 of server ultrasuper COMPLETED
+t:       8641 job    44 on # 0 of server ultrasuper RUNNING
+t:       8641 job    45 on # 0 of server ultrasuper RUNNING
+t:       8641 job    46 on # 0 of server ultrasuper RUNNING
+t:       8641 job    47 on # 0 of server ultrasuper RUNNING
+t:       8641 job    48 on # 0 of server ultrasuper RUNNING
+SENT JCPL 8641 43 ultrasuper 0
+RCVD REDY
+t:       8744 job    44 on # 0 of server ultrasuper COMPLETED
+t:       8744 job    49 on # 0 of server ultrasuper RUNNING
+SENT JCPL 8744 44 ultrasuper 0
+RCVD REDY
+t:       8797 job    46 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 8797 46 ultrasuper 0
+RCVD REDY
+t:       8812 job    49 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 8812 49 ultrasuper 0
+RCVD REDY
+t:       8875 job    45 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 8875 45 ultrasuper 0
+RCVD REDY
+t:       9027 job    47 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 9027 47 ultrasuper 0
+RCVD REDY
+t:      10422 job    48 on # 0 of server ultrasuper COMPLETED
+SENT JCPL 10422 48 ultrasuper 0
+RCVD REDY
+SENT NONE
+RCVD REDY
+SENT NONE
+RCVD QUIT
+SENT QUIT
+# -------------------------------------------------------------------------------------
+# 0 small servers used with a utilisation of 0.00 at the cost of $0.00
+# 0 medium servers used with a utilisation of 0.00 at the cost of $0.00
+# 0 large servers used with a utilisation of 0.00 at the cost of $0.00
+# 0 super servers used with a utilisation of 0.00 at the cost of $0.00
+# 1 ultrasuper servers used with a utilisation of 100.00 at the cost of $4.58
+# ==================================== [ Summary ] ====================================
+# actual simulation end time: 10422, #jobs: 50 (failed 0 times)
+# total #servers used: 1, avg util: 100.00% (ef. usage: 100.00%), total cost: $4.58
+# avg waiting time: 3977, avg exec time: 633, avg turnaround time: 4610
