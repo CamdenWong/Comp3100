@@ -29,7 +29,7 @@ private static int j=0;
 
    
 
-    //create socket
+
     private MyClient(String address,int port) throws Exception {
          s = new Socket(address, port);
          dout = new DataOutputStream(s.getOutputStream());
@@ -63,29 +63,27 @@ private static int j=0;
     private static void getServerslist()throws Exception{
        send("GETS All");
        Receive();
-       getLastRec();
+        getLastRec();
        String str=getLastRec();
        String[]data=str.split(" ");
-
-       //Receive DATA nRecs recSize
        int nRecs=Integer.parseInt(data[1]);
+      
        send("OK");
 
        for(int i=0;i<nRecs;i++){
+
         String datas=(String)din.readLine();
         System.out.println("message = " + datas);
 
-        // create server and add to list
         Servers server = new Servers(datas);
         serverlist.add(server);
        }
 
-        //find the largerServertype
        Servers largestServer=findLargestServer();
        type=largestServer.Serverstype;
+    //    System.out.println(largestServer.getServerType()+" "+count);
 
         send("OK");
-        //Receive .
         Receive();
     }
 
@@ -94,16 +92,14 @@ private static int j=0;
         if (serverlist.isEmpty()) {
             return null;
         }
-
         Servers largestServer = serverlist.get(0);
         for (int i = 1; i < serverlist.size(); i++) {
             Servers server = serverlist.get(i);
-
             if (server.getCore() > largestServer.getCore()) {
                 largestServer = server;
                 count=0;
-            }
 
+            }
             if(server.getCore()==largestServer.getCore()&&server.Serverstype.equals(largestServer.Serverstype)){
                count++;
             }
@@ -115,34 +111,36 @@ private static int j=0;
         while(!getLastRec().contains("NONE")){
         send("REDY");
         Receive();
+        
+        
         String step10=getLastRec();
 
+        
+        
        if(step10.contains("JOBN")){
                String[]Jobnarr=step10.split(" ");
                jobID=Integer.parseInt(Jobnarr[2]);
             }
 
-
-        // obtain the serverinfo
         if(finded==false){
             getServerslist();
             finded=true;
-            //only run 1 time
-            }
+            
+        }
         
-         //schedule job
-        if(step10.contains("JOBN")){
+
+         if(step10.contains("JOBN")){
                 send(("SCHD "+jobID+" "+type+" "+j));
                 Receive();
                 j++;
-            }
+              }
 
-        //reset
-        if(j>=count){
-                j=0;
-            }
 
-        }
+                if(j>=count){
+                    j=0;
+                }
+
+            }
     }
 
 
