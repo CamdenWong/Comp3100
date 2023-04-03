@@ -6,7 +6,7 @@ public class Client {
         try {
 
             Socket s = new Socket("127.0.01", 50000);
-
+            //Create Socket
             DataOutputStream dout = new DataOutputStream(s.getOutputStream());
             BufferedReader din = new BufferedReader(new InputStreamReader(s.getInputStream()));
 
@@ -25,9 +25,8 @@ public class Client {
             int count=0;
             String type="";
             int jobID=0;
-            Boolean finded= false;
-
-            int j=0;
+            Boolean finded=false;
+            int j=0; //for schedule the job and reset the serverID
 
 
 
@@ -37,8 +36,10 @@ public class Client {
             Receive = (String) din.readLine();
             // Receive JOBN, JCPL and NONE
             String step10=Receive;
-
             System.out.println("message = " + Receive);
+
+
+            //find jobID
             if(Receive.contains("JOBN")){
                String[]Jobnarr=Receive.split(" ");
                jobID=Integer.parseInt(Jobnarr[2]);
@@ -52,28 +53,32 @@ public class Client {
 
             String[]data=Receive.split(" ");
             int nRecs=Integer.parseInt(data[1]);
-
-
+            
             dout.write(("OK\n").getBytes());
+
             for(int i=0;i<nRecs;i++){
             Receive = (String) din.readLine();
+            //Receive serverType serverID state curStartTime core
 
             String[] arr = Receive.split(" ");
             int id=Integer.parseInt(arr[1]);
             int core=Integer.parseInt(arr[4]);
             String temp=arr[0];
+            //temp may diff with type but have same core number
             
-            
+            //find the largerstServer
             if(largestCore==0){
                 largestCore=core;
+
             }else{
+
                 if (core>largestCore){
                     largestCore=core;
-                   
                     type =arr[0];
                     finded=true;
                     count=0;
                 }
+
                 if(core==largestCore&&type.equals(temp)){
                     count++;
                 }
@@ -83,37 +88,34 @@ public class Client {
              System.out.println(count);
 
             }
+
             dout.write(("OK\n").getBytes());
             Receive = (String) din.readLine();
             System.out.println("message = " + Receive);
 
-            
             }
             
-           
-            
+            //schedule job
             if(step10.contains("JOBN")){
                 dout.write(("SCHD "+jobID+" "+type+" "+j+"\n").getBytes());
                 Receive = (String) din.readLine();
                 System.out.println("message = " + Receive);
-
                 j++;
               }
 
-                // j++;
-
-                if(j>=count){
+            if(j>=count){
                     j=0;
                 }
 
             }
             
-             dout.write(("QUIT\n").getBytes());
+            dout.write(("QUIT\n").getBytes());
             Receive = (String) din.readLine();
             System.out.println("message= " + Receive);
 
             dout.close();
             s.close();
+
         } catch (Exception e) {
             System.out.println(e);
         }
