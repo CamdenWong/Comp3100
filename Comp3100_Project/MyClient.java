@@ -112,7 +112,7 @@ private static int j=0;
         //find the largerServertype
        Servers largestServer=findfirstServer();
        type=largestServer.Serverstype;
-       serverlist.remove(0);
+       serverlist.clear();
 
         send("OK");
         //Receive .
