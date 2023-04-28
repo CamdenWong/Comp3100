@@ -91,27 +91,6 @@ private static int j=0;
 
     private static void getfirstserver()throws Exception{
         send(("GETS Capable "+jcore+" "+jm+" "+jd));
-    //     getLastRec();
-    //     String str=getLastRec();
-    //     String[]data=str.split(" ");
- 
-    //     //Receive DATA nRecs recSize
-    //     int nRecs=Integer.parseInt(data[1]);
-    //     send("OK");
-
-        
-    //    for(int i=0;i<nRecs;i++){
-    //     String datas=(String)din.readLine();
-    //     System.out.println("message = " + datas);
-    //     Servers server = new Servers(datas);
-    //     serverlist.add(server);
-    //     }
-    //     Servers fiServers=findfirstServer();
-    //     type=fiServers.Serverstype;
-    //     id=fiServers.getid();
-    //     send("OK");
-    //     Receive();
-    // send("GETS All");
        Receive();
        getLastRec();
        String str=getLastRec();
@@ -223,11 +202,11 @@ private static int j=0;
                jd=Integer.parseInt(Jobnarr[6]);
                
             }
-            if(finded==false){
+            // if(finded==false){
                 getfirstserver();
-                finded=true;
+                // finded=true;
                 //only run 1 time
-                }
+                // }
             
              //schedule job
             if(step10.contains("JOBN")){
