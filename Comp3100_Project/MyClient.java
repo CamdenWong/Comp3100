@@ -10,6 +10,10 @@ private static BufferedReader din;
 private static int count=0;
 private static String lastRec="";
 private static int jobID=0;
+private static int jcore=0;
+private static int jm=0;
+private static int jd=0;
+private static int id=0;
 private static Boolean finded=false;
 private static String type="";
 private static int j=0;
@@ -21,7 +25,8 @@ private static int j=0;
         c.Receive();
         c.send("AUTH camden");
         c.Receive();
-        c.LRR();
+        // c.LRR();
+        c.FirstCap();
         c.send("QUIT");
         c.Receive();
         c.close();
@@ -30,7 +35,7 @@ private static int j=0;
    
 
     //create socket
-    private MyClient(String address,int port) throws Exception {
+    private  MyClient(String address,int port) throws Exception {
          s = new Socket(address, port);
          dout = new DataOutputStream(s.getOutputStream());
          din = new BufferedReader(new InputStreamReader(s.getInputStream()));
@@ -89,6 +94,36 @@ private static int j=0;
         Receive();
     }
 
+    private static void getfirstserver()throws Exception{
+        send(("GETS Capable "+jcore+" "+jm+" "+jd));
+        getLastRec();
+        String str=getLastRec();
+        String[]data=str.split(" ");
+ 
+        //Receive DATA nRecs recSize
+        int nRecs=Integer.parseInt(data[1]);
+        send("OK");
+
+        
+       for(int i=0;i<nRecs;i++){
+        String datas=(String)din.readLine();
+        System.out.println("message = " + datas);
+
+        if(finded==false){
+        // create server and add to list
+        Servers server = new Servers(datas);
+        serverlist.add(server);
+        finded=true;
+        }
+    }
+    Servers largestServer=findLargestServer();
+    type=largestServer.Serverstype;
+    send("OK");
+    //Receive .
+    Receive();
+
+    }
+
 
     public static Servers findLargestServer() {
         if (serverlist.isEmpty()) {
@@ -145,6 +180,32 @@ private static int j=0;
         }
     }
 
+    private static void FirstCap() throws Exception{
+        while(!getLastRec().contains("NONE")){
+        send("REDY");
+        Receive();
+        String step10=getLastRec(); 
+        
+        if(step10.contains("JOBN")){
+               String[]Jobnarr=step10.split(" ");
+               jobID=Integer.parseInt(Jobnarr[2]);
+               jcore=Integer.parseInt(Jobnarr[4]);
+               jm=Integer.parseInt(Jobnarr[5]);
+               jd=Integer.parseInt(Jobnarr[6]);
+            }
+        
+        getfirstserver();
+
+        if(step10.contains("JOBN")){
+            send(("SCHD "+jobID+" "+type+" "+id));
+            Receive();
+            finded=false;
+        }
+
+
+        }
+    }
+
 
 }
 
@@ -153,17 +214,23 @@ class Servers{
     private String DATA;
     public String Serverstype;
     private int core;
+    private int id;
     
     public Servers (String DATA){
         String []data=DATA.split(" ");
         this.Serverstype=data[0];
         this.core=Integer.parseInt(data[4]);
+        this.id=Integer.parseInt(data[1]);
     }
     public String getServerType(){
         return Serverstype;
     }
     public int getCore(){
         return core;
+    }
+
+    public int getid(){
+        return id;
     }
 
 }
