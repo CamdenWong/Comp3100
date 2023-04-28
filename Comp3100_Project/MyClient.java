@@ -202,7 +202,7 @@ private static int j=0;
                jm=Integer.parseInt(Jobnarr[5]);
                jd=Integer.parseInt(Jobnarr[6]);
                
-            }
+            
             if(finded==false){
                 getfirstserver();
                 finded=true;
@@ -214,6 +214,7 @@ private static int j=0;
                     Receive();
                     finded=false;
                 }
+            }
     
         }
     }
