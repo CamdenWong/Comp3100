@@ -112,6 +112,7 @@ private static int j=0;
         //find the largerServertype
        Servers largestServer=findfirstServer();
        type=largestServer.Serverstype;
+       serverlist.remove(0);
 
         send("OK");
         //Receive .
@@ -202,11 +203,10 @@ private static int j=0;
                jd=Integer.parseInt(Jobnarr[6]);
                
             }
-            // if(finded==false){
+            if(finded==false){
                 getfirstserver();
-                // finded=true;
-                //only run 1 time
-                // }
+                finded=true;
+                }
             
              //schedule job
             if(step10.contains("JOBN")){
