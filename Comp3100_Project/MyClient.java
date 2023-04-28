@@ -91,26 +91,55 @@ private static int j=0;
 
     private static void getfirstserver()throws Exception{
         send(("GETS Capable "+jcore+" "+jm+" "+jd));
-        getLastRec();
-        String str=getLastRec();
-        String[]data=str.split(" ");
+    //     getLastRec();
+    //     String str=getLastRec();
+    //     String[]data=str.split(" ");
  
-        //Receive DATA nRecs recSize
-        int nRecs=Integer.parseInt(data[1]);
-        send("OK");
+    //     //Receive DATA nRecs recSize
+    //     int nRecs=Integer.parseInt(data[1]);
+    //     send("OK");
 
         
+    //    for(int i=0;i<nRecs;i++){
+    //     String datas=(String)din.readLine();
+    //     System.out.println("message = " + datas);
+    //     Servers server = new Servers(datas);
+    //     serverlist.add(server);
+    //     }
+    //     Servers fiServers=findfirstServer();
+    //     type=fiServers.Serverstype;
+    //     id=fiServers.getid();
+    //     send("OK");
+    //     Receive();
+    // send("GETS All");
+       Receive();
+       getLastRec();
+       String str=getLastRec();
+       String[]data=str.split(" ");
+
+       //Receive DATA nRecs recSize
+       int nRecs=Integer.parseInt(data[1]);
+       send("OK");
+
        for(int i=0;i<nRecs;i++){
         String datas=(String)din.readLine();
         System.out.println("message = " + datas);
+
+        // create server and add to list
         Servers server = new Servers(datas);
         serverlist.add(server);
-        }
-        Servers fiServers=findfirstServer();
-        type=fiServers.Serverstype;
-        id=fiServers.getid();
+       }
+
+        //find the largerServertype
+       Servers largestServer=findfirstServer();
+       type=largestServer.Serverstype;
+
         send("OK");
+        //Receive .
         Receive();
+
+
+
     }
   
     
@@ -194,12 +223,19 @@ private static int j=0;
                jd=Integer.parseInt(Jobnarr[6]);
                
             }
-        
-            getfirstserver();
-
-       
-
-
+            if(finded==false){
+                getfirstserver();
+                finded=true;
+                //only run 1 time
+                }
+            
+             //schedule job
+            if(step10.contains("JOBN")){
+                    send(("SCHD "+jobID+" "+type+" "+id));
+                    Receive();
+                    finded=false;
+                }
+    
         }
     }
 
