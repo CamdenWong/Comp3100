@@ -116,13 +116,20 @@ private static int j=0;
         finded=true;
         }
     }
-    Servers largestServer=findLargestServer();
-    type=largestServer.Serverstype;
+    // Servers largestServer=findLargestServer();
+    Servers firstServer=serverlist.get(0);
+    type=firstServer.Serverstype;
+    id=firstServer.getid();
     send("OK");
     //Receive .
     Receive();
 
+        send(("SCHD "+jobID+" "+type+" "+id));
+        Receive();
+        finded=false;
     }
+
+    
 
 
     public static Servers findLargestServer() {
@@ -192,15 +199,12 @@ private static int j=0;
                jcore=Integer.parseInt(Jobnarr[4]);
                jm=Integer.parseInt(Jobnarr[5]);
                jd=Integer.parseInt(Jobnarr[6]);
+               getfirstserver();
             }
         
-        getfirstserver();
+       
 
-        if(step10.contains("JOBN")){
-            send(("SCHD "+jobID+" "+type+" "+id));
-            Receive();
-            finded=false;
-        }
+       
 
 
         }
