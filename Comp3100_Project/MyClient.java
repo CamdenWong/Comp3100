@@ -105,19 +105,20 @@ private static int j=0;
         send("OK");
 
         
-        for(int i=0;i<nRecs;i++){
-            String datas=(String)din.readLine();
-            System.out.println("message = " + datas);
-    
-            // create server and add to list
-            Servers server = new Servers(datas);
-            serverlist.add(server);
-           }
-    
+       for(int i=0;i<nRecs;i++){
+        String datas=(String)din.readLine();
+        System.out.println("message = " + datas);
+
+        getLastRec();
+        str=getLastRec();
+        String[]arr=str.split(" ");
+        if(finded==false){
+        type=arr[0];
+        id=Integer.parseInt(arr[1]);
+        finded=true;
+        }
+    }
     // Servers largestServer=findLargestServer();
-    Servers firstServer=serverlist.get(0);
-    type=firstServer.Serverstype;
-    id=firstServer.getid();
     send("OK");
     //Receive .
     Receive();
