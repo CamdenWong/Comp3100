@@ -42,9 +42,6 @@ private static int j=0;
 
     }
 
-    
-
-
     public static void send(String str) throws Exception{
         dout.write((str+"\n").getBytes());
     }
@@ -62,8 +59,6 @@ private static int j=0;
         dout.close();
         s.close();
     }
-
-
 
     private static void getServerslist()throws Exception{
        send("GETS All");
@@ -108,28 +103,17 @@ private static int j=0;
        for(int i=0;i<nRecs;i++){
         String datas=(String)din.readLine();
         System.out.println("message = " + datas);
-
-        getLastRec();
-        str=getLastRec();
-        String[]arr=str.split(" ");
-        if(finded==false){
-        type=arr[0];
-        id=Integer.parseInt(arr[1]);
-        finded=true;
+        Servers server = new Servers(datas);
+        serverlist.add(server);
         }
-    }
-    // Servers largestServer=findLargestServer();
-    send("OK");
-    //Receive .
-    Receive();
-
-        send(("SCHD "+jobID+" "+type+" "+id));
+        Servers fiServers=findfirstServer();
+        type=fiServers.Serverstype;
+        id=fiServers.getid();
+        send("OK");
         Receive();
-        finded=false;
     }
-
+  
     
-
 
     public static Servers findLargestServer() {
         if (serverlist.isEmpty()) {
@@ -151,6 +135,16 @@ private static int j=0;
         }
         return largestServer;
     }
+
+    public static Servers findfirstServer() {
+        if (serverlist.isEmpty()) {
+            return null;
+        }
+        Servers firstServers = serverlist.get(0);
+        return firstServers;
+    }
+
+
 
     private static void LRR() throws Exception{
         while(!getLastRec().contains("NONE")){
@@ -198,10 +192,10 @@ private static int j=0;
                jcore=Integer.parseInt(Jobnarr[4]);
                jm=Integer.parseInt(Jobnarr[5]);
                jd=Integer.parseInt(Jobnarr[6]);
-               getfirstserver();
+               
             }
         
-       
+            getfirstserver();
 
        
 
