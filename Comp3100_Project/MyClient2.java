@@ -165,7 +165,7 @@ public class MyClient2 {
         // Receive DATA nRecs recSize
         int nRecs = Integer.parseInt(data[1]);
         send("OK");
-
+        if(nRecs!=0){
         for (int i = 0; i < nRecs; i++) {
             String datas = (String) din.readLine();
             System.out.println("message = " + datas);
@@ -174,6 +174,7 @@ public class MyClient2 {
             Servers server = new Servers(datas);
             serverlist.add(server);
         }
+    }
 
         // find the largerServertype
         
@@ -186,7 +187,8 @@ public class MyClient2 {
         id = Server.getid();
         serverlist.clear();
 
-    }
+    
+}
 
     
 
