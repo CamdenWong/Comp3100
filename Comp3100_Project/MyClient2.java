@@ -106,45 +106,49 @@ public class MyClient2 {
             Servers server = new Servers(datas);
             serverlist.add(server);
         }
+        
 
         // find the largerServertype
         Servers largestServer = findfirstServer();
         type = largestServer.Serverstype;
         serverlist.clear();
 
+
     }
 
+
     // private static void getStage2server() throws Exception {
-    // send(("GETS Avail " + jcore + " " + jm + " " + jd));
-    // Receive();
-    // getLastRec();
-    // String str = getLastRec();
-    // String[] data = str.split(" ");
+    //     send(("GETS Avail " + jcore + " " + jm + " " + jd));
+    //     Receive();
+    //     getLastRec();
+    //     String str = getLastRec();
+    //     String[] data = str.split(" ");
 
-    // // Receive DATA nRecs recSize
-    // int nRecs = Integer.parseInt(data[1]);
-    // send("OK");
+    //     // Receive DATA nRecs recSize
+    //     int nRecs = Integer.parseInt(data[1]);
+    //     send("OK");
 
-    // if(nRecs==0){
-    // getStage2Capable();
-    // }else {
-    // for (int i = 0; i < nRecs; i++) {
-    // String datas = (String) din.readLine();
-    // System.out.println("message = " + datas);
+    //     if(nRecs==0){
+    //         getStage2Capable();
+    //     }else {
+    //     for (int i = 0; i < nRecs; i++) {
+    //         String datas = (String) din.readLine();
+    //         System.out.println("message = " + datas);
 
-    // // create server and add to list
-    // Servers server = new Servers(datas);
-    // serverlist.add(server);
-    // }
-    // send("OK");
-    // // Receive .
-    // Receive();
-    // // find the fisrstServertype
-    // Servers Server = findfirstServer();
-    // type = Server.Serverstype;
-    // id = Server.getid();
-    // serverlist.clear();
+    //         // create server and add to list
+    //         Servers server = new Servers(datas);
+    //         serverlist.add(server);
+    //     }
+    //     send("OK");
+    //     // Receive .
+    //     Receive();
+    //     // find the fisrstServertype
+    //     Servers Server = findfirstServer();
+    //     type = Server.Serverstype;
+    //     id = Server.getid();
+    //     serverlist.clear();
 
+       
     // }
     // }
 
@@ -154,102 +158,106 @@ public class MyClient2 {
         getLastRec();
         String str = getLastRec();
         String[] data = str.split(" ");
-
+    
         // Receive DATA nRecs recSize
         int nRecs = Integer.parseInt(data[1]);
         send("OK");
-
+    
         if (nRecs == 0) {
-            send(("GETS Capable " + jcore + " " + jm + " " + jd));
-            Receive();
-            getLastRec();
-            str = getLastRec();
-            data = str.split(" ");
-            // Receive DATA nRecs recSize
-            nRecs = Integer.parseInt(data[1]);
-            send("OK");
+        send(("GETS Capable " + jcore + " " + jm + " " + jd));
+        Receive();
+        getLastRec();
+        String str2 = getLastRec();
+        String[] data2 = str2.split(" ");
+        // Receive DATA nRecs recSize
+        int nRecs2 = Integer.parseInt(data2[1]);
+        send("OK");
 
-            for (int i = 0; i < nRecs; i++) {
-                String datas = (String) din.readLine();
-                System.out.println("message = " + datas);
+        for (int i = 0; i < nRecs2; i++) {
+            String datas = (String) din.readLine();
+            System.out.println("message = " + datas);
 
-                // create server and add to list
-                Servers server = new Servers(datas);
-                serverlist.add(server);
-            }
-            send("OK");
-            // Receive .
-            Receive();
+            // create server and add to list
+            Servers server = new Servers(datas);
+            serverlist.add(server);
+        }
+        send("OK");
+        // Receive .
+        Receive();
 
-            // find the largerServertype
-            Servers Server = LessWaitingtimeServer();
-            type = Server.Serverstype;
-            id = Server.getid();
-            serverlist.clear();
+        // find the largerServertype
+        Servers Server = LessWaitingtimeServer();
+        type = Server.Serverstype;
+        serverlist.clear();
 
+       
         } else {
-
             for (int i = 0; i < nRecs; i++) {
                 String datas = (String) din.readLine();
                 System.out.println("message = " + datas);
-
+    
                 // create server and add to list
                 Servers server = new Servers(datas);
                 serverlist.add(server);
             }
-            send("OK");
-            // Receive .
-            Receive();
-
+            
             // find the firstServertype
             Servers server = findfirstServer();
             type = server.getServerType();
             id = server.getid();
             serverlist.clear();
         }
+    
+        send("OK");
+        // Receive .
+        Receive();
+    }
+    
+
+    
+    // private static void getStage2Capable() throws Exception {
+    //     send(("GETS Capable " + jcore + " " + jm + " " + jd));
+    //     Receive();
+    //     getLastRec();
+    //     String str = getLastRec();
+    //     String[] data = str.split(" ");
+    //     // Receive DATA nRecs recSize
+    //     int nRecs = Integer.parseInt(data[1]);
+    //     send("OK");
+
+    //     for (int i = 0; i < nRecs; i++) {
+    //         String datas = (String) din.readLine();
+    //         System.out.println("message = " + datas);
+
+    //         // create server and add to list
+    //         Servers server = new Servers(datas);
+    //         serverlist.add(server);
+    //     }
+    //     send("OK");
+    //     // Receive .
+    //     Receive();
+
+    //     // find the largerServertype
+    //     Servers Server = LessWaitingtimeServer();
+    //     type = Server.Serverstype;
+    //     serverlist.clear();
 
        
-    }
-
-    // private static void getStage2Capable() throws Exception {
-    // send(("GETS Capable " + jcore + " " + jm + " " + jd));
-    // Receive();
-    // getLastRec();
-    // String str = getLastRec();
-    // String[] data = str.split(" ");
-    // // Receive DATA nRecs recSize
-    // int nRecs = Integer.parseInt(data[1]);
-    // send("OK");
-
-    // for (int i = 0; i < nRecs; i++) {
-    // String datas = (String) din.readLine();
-    // System.out.println("message = " + datas);
-
-    // // create server and add to list
-    // Servers server = new Servers(datas);
-    // serverlist.add(server);
-    // }
-    // send("OK");
-    // // Receive .
-    // Receive();
-
-    // // find the largerServertype
-    // Servers Server = LessWaitingtimeServer();
-    // type = Server.Serverstype;
-    // serverlist.clear();
 
     // }
+
+    
 
     private static Servers LessWaitingtimeServer() throws Exception {
         int minWaitingTime = Integer.MAX_VALUE;
         int minCoreCount = Integer.MAX_VALUE;
         Servers selectedServer = null;
-
+    
         for (Servers server : serverlist) {
             send(("EJWT " + server.getServerType() + " " + server.getid()));
             Receive();
             int waitingTime = Integer.parseInt(getLastRec());
-
+    
             if (waitingTime < minWaitingTime) {
                 minWaitingTime = waitingTime;
                 minCoreCount = server.getCore();
@@ -263,9 +271,12 @@ public class MyClient2 {
                 }
             }
         }
-
+    
         return selectedServer;
     }
+    
+
+    
 
     public static Servers findLargestServer() {
         if (serverlist.isEmpty()) {
@@ -357,7 +368,7 @@ public class MyClient2 {
         }
     }
 
-    private static void stage2() throws Exception {
+    private static void stage2() throws Exception{
 
         while (!getLastRec().contains("NONE")) {
             send("REDY");
@@ -388,7 +399,9 @@ public class MyClient2 {
 
     }
 
+   
 }
+
 
 class Servers {
     private String DATA;
