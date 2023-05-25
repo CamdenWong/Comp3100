@@ -106,15 +106,13 @@ public class MyClient2 {
             Servers server = new Servers(datas);
             serverlist.add(server);
         }
+        
 
         // find the largerServertype
         Servers largestServer = findfirstServer();
         type = largestServer.Serverstype;
         serverlist.clear();
 
-        send("OK");
-        // Receive .
-        Receive();
 
     }
 
@@ -141,19 +139,18 @@ public class MyClient2 {
             Servers server = new Servers(datas);
             serverlist.add(server);
         }
-        
+        send("OK");
+        // Receive .
+        Receive();
         // find the fisrstServertype
         Servers Server = findfirstServer();
         type = Server.Serverstype;
         id = Server.getid();
         serverlist.clear();
 
-        send("OK");
-        // Receive .
-        Receive();
+       
     }
     }
-    
 
     
     private static void getStage2Capable() throws Exception {
@@ -165,7 +162,7 @@ public class MyClient2 {
         // Receive DATA nRecs recSize
         int nRecs = Integer.parseInt(data[1]);
         send("OK");
-        if(nRecs!=0){
+
         for (int i = 0; i < nRecs; i++) {
             String datas = (String) din.readLine();
             System.out.println("message = " + datas);
@@ -174,21 +171,18 @@ public class MyClient2 {
             Servers server = new Servers(datas);
             serverlist.add(server);
         }
-    }
-
-        // find the largerServertype
-        
-
         send("OK");
         // Receive .
         Receive();
+
+        // find the largerServertype
         Servers Server = LessWaitingtimeServer();
         type = Server.Serverstype;
-        id = Server.getid();
         serverlist.clear();
 
-    
-}
+       
+
+    }
 
     
 
