@@ -25,7 +25,8 @@ public class MyClient2 {
         c.send("AUTH camden");
         c.Receive();
         // c.LRR();
-        c.FirstCap();
+        // c.FirstCap()
+        c.stage2();
         c.send("QUIT");
         c.Receive();
         c.close();
@@ -130,8 +131,7 @@ public class MyClient2 {
         send("OK");
 
         if(nRecs==0){
-            // get capabled
-
+            getStage2Capable();
         }else{
         for (int i = 0; i < nRecs; i++) {
             String datas = (String) din.readLine();
@@ -151,15 +151,75 @@ public class MyClient2 {
         // Receive .
         Receive();
     }
+    }
 
+    
+    private static void getStage2Capable() throws Exception {
+        send(("GETS Capable " + jcore + " " + jm + " " + jd));
+        Receive();
+        getLastRec();
+        String str = getLastRec();
+        String[] data = str.split(" ");
+        // Receive DATA nRecs recSize
+        int nRecs = Integer.parseInt(data[1]);
+        send("OK");
+
+        for (int i = 0; i < nRecs; i++) {
+            String datas = (String) din.readLine();
+            System.out.println("message = " + datas);
+
+            // create server and add to list
+            Servers server = new Servers(datas);
+            serverlist.add(server);
+        }
+
+        // find the largerServertype
+        Servers Server = LessWaitingtimeServer();
+        type = Server.Serverstype;
+        serverlist.clear();
+
+        send("OK");
+        // Receive .
+        Receive();
 
     }
+
+    
+
+    private static Servers LessWaitingtimeServer() throws Exception {
+        int minWaitingTime = Integer.MAX_VALUE;
+        int minCoreCount = Integer.MAX_VALUE;
+        Servers selectedServer = null;
+    
+        for (Servers server : serverlist) {
+            send(("EJWT " + server.getServerType() + " " + server.getid()));
+            Receive();
+            int waitingTime = Integer.parseInt(getLastRec());
+    
+            if (waitingTime < minWaitingTime) {
+                minWaitingTime = waitingTime;
+                minCoreCount = server.getCore();
+                selectedServer = server;
+            } else if (waitingTime == minWaitingTime) {
+                if (server.getCore() < minCoreCount) {
+                    minCoreCount = server.getCore();
+                    selectedServer = server;
+                } else if (server.getCore() == minCoreCount && server.getid() < selectedServer.getid()) {
+                    selectedServer = server;
+                }
+            }
+        }
+    
+        return selectedServer;
+    }
+    
+
+    
 
     public static Servers findLargestServer() {
         if (serverlist.isEmpty()) {
             return null;
         }
-
         Servers largestServer = serverlist.get(0);
         for (int i = 1; i < serverlist.size(); i++) {
             Servers server = serverlist.get(i);
