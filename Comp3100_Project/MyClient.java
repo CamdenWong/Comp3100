@@ -25,8 +25,8 @@ private static int j=0;
         c.Receive();
         c.send("AUTH camden");
         c.Receive();
-        // c.LRR();
-        c.FirstCap();
+        c.LRR();
+        // c.FirstCap();
         c.send("QUIT");
         c.Receive();
         c.close();
@@ -48,7 +48,7 @@ private static int j=0;
 
     private static void Receive() throws Exception{
         lastRec=(String)din.readLine();
-        System.out.println("message = " + lastRec);
+        // System.out.println("message = " + lastRec);
     }
 
     public static String getLastRec(){
@@ -73,7 +73,7 @@ private static int j=0;
 
        for(int i=0;i<nRecs;i++){
         String datas=(String)din.readLine();
-        System.out.println("message = " + datas);
+        // System.out.println("message = " + datas);
 
         // create server and add to list
         Servers server = new Servers(datas);
@@ -102,7 +102,7 @@ private static int j=0;
 
        for(int i=0;i<nRecs;i++){
         String datas=(String)din.readLine();
-        System.out.println("message = " + datas);
+        // System.out.println("message = " + datas);
 
         // create server and add to list
         Servers server = new Servers(datas);
