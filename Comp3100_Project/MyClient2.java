@@ -130,7 +130,7 @@ public class MyClient2 {
 
         if(nRecs==0){
             getStage2Capable();
-        }else{
+        }else if(nRecs>0){
         for (int i = 0; i < nRecs; i++) {
             String datas = (String) din.readLine();
             System.out.println("message = " + datas);
