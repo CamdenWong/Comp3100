@@ -117,40 +117,76 @@ public class MyClient2 {
     }
 
 
+    // private static void getStage2server() throws Exception {
+    //     send(("GETS Avail " + jcore + " " + jm + " " + jd));
+    //     Receive();
+    //     getLastRec();
+    //     String str = getLastRec();
+    //     String[] data = str.split(" ");
+
+    //     // Receive DATA nRecs recSize
+    //     int nRecs = Integer.parseInt(data[1]);
+    //     send("OK");
+
+    //     if(nRecs==0){
+    //         getStage2Capable();
+    //     }else {
+    //     for (int i = 0; i < nRecs; i++) {
+    //         String datas = (String) din.readLine();
+    //         System.out.println("message = " + datas);
+
+    //         // create server and add to list
+    //         Servers server = new Servers(datas);
+    //         serverlist.add(server);
+    //     }
+    //     send("OK");
+    //     // Receive .
+    //     Receive();
+    //     // find the fisrstServertype
+    //     Servers Server = findfirstServer();
+    //     type = Server.Serverstype;
+    //     id = Server.getid();
+    //     serverlist.clear();
+
+       
+    // }
+    // }
+
     private static void getStage2server() throws Exception {
         send(("GETS Avail " + jcore + " " + jm + " " + jd));
         Receive();
         getLastRec();
         String str = getLastRec();
         String[] data = str.split(" ");
-
+    
         // Receive DATA nRecs recSize
         int nRecs = Integer.parseInt(data[1]);
         send("OK");
-
-        if(nRecs==0){
+    
+        if (nRecs == 0) {
             getStage2Capable();
-        }else if(nRecs>0){
-        for (int i = 0; i < nRecs; i++) {
-            String datas = (String) din.readLine();
-            System.out.println("message = " + datas);
-
-            // create server and add to list
-            Servers server = new Servers(datas);
-            serverlist.add(server);
+        } else {
+            for (int i = 0; i < nRecs; i++) {
+                String datas = (String) din.readLine();
+                System.out.println("message = " + datas);
+    
+                // create server and add to list
+                Servers server = new Servers(datas);
+                serverlist.add(server);
+            }
+            
+            // find the firstServertype
+            Servers server = findfirstServer();
+            type = server.getServerType();
+            id = server.getid();
+            serverlist.clear();
         }
+    
         send("OK");
         // Receive .
         Receive();
-        // find the fisrstServertype
-        Servers Server = findfirstServer();
-        type = Server.Serverstype;
-        id = Server.getid();
-        serverlist.clear();
-
-       
     }
-    }
+    
 
     
     private static void getStage2Capable() throws Exception {
