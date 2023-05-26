@@ -21,10 +21,8 @@ public class MyClient2 {
         MyClient2 c = new MyClient2("127.0.01", 50000);
         c.send("HELO");
         c.Receive();
-        System.out.println(lastRec+" "+"24");
         c.send("AUTH camden");
         c.Receive();
-         System.out.println(lastRec+" "+"27");
         c.stage2();
         c.send("QUIT");
         c.Receive();
@@ -45,7 +43,6 @@ public class MyClient2 {
 
     private static void Receive() throws Exception {
         lastRec = (String) din.readLine();
-        System.out.println("message = " + lastRec);
     }
 
     public static String getLastRec() {
@@ -60,61 +57,48 @@ public class MyClient2 {
     private static void getStage2server() throws Exception {
         send(("GETS Avail " + jcore + " " + jm + " " + jd));
         Receive();
-        System.out.println("63"+" " +lastRec);
         getLastRec();
         String str = getLastRec();
         String[] data = str.split(" ");
-    
+
         // Receive DATA nRecs recSize
         int nRecs = Integer.parseInt(data[1]);
-        System.out.println("N :"+nRecs);
         send("OK");
-    
+
         if (nRecs == 0) {
             send("OK");
-            // Receive();
             Receive();
             Receive();
             getStage2Capable();
-            // send(("GETS Capable " + jcore + " " + jm + " " + jd));
-            // Receive();
-            // Receive();
-     
-        //   System.out.println("101"+" " +lastRec);
 
         } else {
 
             for (int i = 0; i < nRecs; i++) {
                 String datas = (String) din.readLine();
-                System.out.println("message = " + datas);
-    
+
                 // create server and add to list
                 Servers server = new Servers(datas);
                 serverlist.add(server);
             }
 
             send("OK");
-        // Receive .
-        Receive();
-            
+
+            Receive();
+
             // find the firstServertype
             Servers server = findfirstServer();
             type = server.Serverstype;
             id = server.getid();
             serverlist.clear();
         }
-    
-        
-    }
-    
 
-    
+    }
+
     private static void getStage2Capable() throws Exception {
         send(("GETS Capable " + jcore + " " + jm + " " + jd));
         Receive();
         Receive();
-     
-          System.out.println("101"+" " +lastRec);
+
         getLastRec();
         String str = getLastRec();
         String[] data = str.split(" ");
@@ -124,13 +108,12 @@ public class MyClient2 {
 
         for (int i = 0; i < nRecs; i++) {
             String datas = (String) din.readLine();
-            System.out.println("message = " + datas);
 
             // create server and add to list
             Servers server = new Servers(datas);
             serverlist.add(server);
         }
-        //  Receive();
+        // Receive();
         send("OK");
 
         Receive();
@@ -139,24 +122,21 @@ public class MyClient2 {
         Servers Server = LessWaitingtimeServer();
         // Servers Server = findfirstServer();
         type = Server.Serverstype;
-        id=Server.getid();
+        id = Server.getid();
         serverlist.clear();
 
-
     }
-
-    
 
     private static Servers LessWaitingtimeServer() throws Exception {
         int minWaitingTime = Integer.MAX_VALUE;
         int minCoreCount = Integer.MAX_VALUE;
         Servers selectedServer = null;
-    
+
         for (Servers server : serverlist) {
             send(("EJWT " + server.getServerType() + " " + server.getid()));
             Receive();
             int waitingTime = Integer.parseInt(getLastRec());
-    
+
             if (waitingTime < minWaitingTime) {
                 minWaitingTime = waitingTime;
                 minCoreCount = server.getCore();
@@ -170,14 +150,9 @@ public class MyClient2 {
                 }
             }
         }
-    
+
         return selectedServer;
     }
-    
-
-    
-
-    
 
     public static Servers findfirstServer() {
         if (serverlist.isEmpty()) {
@@ -187,13 +162,12 @@ public class MyClient2 {
         return firstServers;
     }
 
-    private static void stage2() throws Exception{
+    private static void stage2() throws Exception {
 
         while (!getLastRec().contains("NONE")) {
             send("REDY");
-             // Receive JOBN, JCPL and NONE
+            // Receive JOBN, JCPL and NONE
             Receive();
-            System.out.println("174"+" " +lastRec);
             String step10 = getLastRec();
 
             if (step10.contains("JOBN")) {
@@ -203,25 +177,20 @@ public class MyClient2 {
                 jm = Integer.parseInt(Jobnarr[5]);
                 jd = Integer.parseInt(Jobnarr[6]);
 
-            
-                    getStage2server();
-
-                
+                getStage2server();
 
                 // schedule job
-           
-                    send(("SCHD " + jobID + " " + type + " " + id));
-                    Receive();
-                   
+
+                send(("SCHD " + jobID + " " + type + " " + id));
+                Receive();
+
             }
 
         }
 
     }
 
-   
 }
-
 
 class Servers {
     public String Serverstype;
